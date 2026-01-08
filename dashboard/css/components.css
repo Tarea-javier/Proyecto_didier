@@ -1,0 +1,233 @@
+.kpi-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition);
+}
+
+.kpi-card:hover {
+    border-color: var(--border-hover);
+}
+
+.kpi-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.kpi-value {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.kpi-change {
+    font-size: 13px;
+    font-family: var(--font-mono);
+}
+
+.kpi-change.positive {
+    color: var(--status-success);
+}
+
+.kpi-change.negative {
+    color: var(--status-error);
+}
+
+.chart-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition);
+}
+
+.chart-card:hover {
+    border-color: var(--border-hover);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.chart-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.chart-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.chart-meta span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.chart-legend {
+    display: flex;
+    gap: var(--spacing-md);
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.metric-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition);
+}
+
+.metric-card:hover {
+    border-color: var(--border-hover);
+}
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.metric-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.metric-subtitle {
+    font-size: 12px;
+    color: var(--text-tertiary);
+}
+
+.kpi-inline {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+}
+
+.kpi-inline-value {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+}
+
+.kpi-inline-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.table-container {
+    overflow-x: auto;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.data-table thead {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-secondary);
+    z-index: 10;
+}
+
+.data-table th {
+    padding: var(--spacing-sm) var(--spacing-sm);
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.data-table td {
+    padding: var(--spacing-sm) var(--spacing-sm);
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+}
+
+.data-table tbody tr:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.text-right {
+    text-align: right;
+}
+
+canvas {
+    max-height: 300px;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.error {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--status-error);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    color: var(--status-error);
+    font-size: 13px;
+    font-family: var(--font-mono);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-hover);
+}

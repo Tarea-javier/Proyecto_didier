@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olist E-Commerce Dashboard</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">Olist E-Commerce Dashboard</h1>
+            <div class="header-meta">
+                <span class="period">Sep 2016 - Oct 2018</span>
+                <span class="status" id="data-status">
+                    <svg width="8" height="8" viewBox="0 0 8 8">
+                        <circle cx="4" cy="4" r="4" fill="currentColor"/>
+                    </svg>
+                    Loading
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2 class="section-title">Executive Overview</h2>
+            
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-label">Total GMV</div>
+                    <div class="kpi-value" id="kpi-gmv">-</div>
+                    <div class="kpi-change" id="kpi-gmv-change"></div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Orders</div>
+                    <div class="kpi-value" id="kpi-orders">-</div>
+                    <div class="kpi-change" id="kpi-orders-change"></div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-label">Average Order Value</div>
+                    <div class="kpi-value" id="kpi-aov">-</div>
+                    <div class="kpi-change" id="kpi-aov-change"></div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-label">Unique Customers</div>
+                    <div class="kpi-value" id="kpi-customers">-</div>
+                    <div class="kpi-change" id="kpi-customers-change"></div>
+                </div>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Monthly Revenue</h3>
+                        <div class="chart-legend">
+                            <span class="legend-item">
+                                <span class="legend-dot" style="background: var(--accent-blue)"></span>
+                                GMV
+                            </span>
+                        </div>
+                    </div>
+                    <canvas id="revenue-chart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Monthly Orders</h3>
+                        <div class="chart-legend">
+                            <span class="legend-item">
+                                <span class="legend-dot" style="background: var(--accent-green)"></span>
+                                Orders
+                            </span>
+                        </div>
+                    </div>
+                    <canvas id="orders-chart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Performance & Operations</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3 class="metric-title">Top 10 States</h3>
+                        <span class="metric-subtitle">by Revenue</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="states-table">
+                            <thead>
+                                <tr>
+                                    <th>State</th>
+                                    <th class="text-right">Revenue</th>
+                                    <th class="text-right">Orders</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3 class="metric-title">Top 10 Categories</h3>
+                        <span class="metric-subtitle">by Revenue</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="categories-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th class="text-right">Revenue</th>
+                                    <th class="text-right">Items</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3 class="metric-title">Delivery Performance</h3>
+                        <div class="kpi-inline">
+                            <span class="kpi-inline-value" id="ontime-rate">-</span>
+                            <span class="kpi-inline-label">on-time rate</span>
+                        </div>
+                    </div>
+                    <canvas id="delivery-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Lead Time Distribution</h3>
+                        <div class="chart-meta">
+                            <span id="lead-time-avg">-</span> avg days
+                        </div>
+                    </div>
+                    <canvas id="leadtime-chart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Customer Satisfaction</h3>
+                        <div class="chart-meta">
+                            <span id="review-avg">-</span> / 5.0
+                        </div>
+                    </div>
+                    <canvas id="satisfaction-chart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span>Olist Brazilian E-Commerce Dataset</span>
+            <span class="footer-separator">|</span>
+            <span>100k+ orders analyzed</span>
+        </div>
+    </footer>
+
+    <script src="lib/papaparse.min.js"></script>
+    <script src="lib/chart.min.js"></script>
+    <script src="js/data-processor.js"></script>
+    <script src="js/kpi-engine.js"></script>
+    <script src="js/chart-renderer.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
